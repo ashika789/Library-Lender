@@ -104,11 +104,17 @@ public class Library {
 		}
 
 	}
-
+public static String returnItem() {
+	
+	Scanner in = new Scanner(System.in).useDelimiter("\\n");
+	System.out.println("Which item (enter the title)? ");
+	String r = in.next();
+	return r;
+}
 	public static void main(String[] args) {
 		Library one = new Library();
 
-		Scanner in = new Scanner(System.in).useDelimiter("\\n");
+		Scanner in = new Scanner(System.in);
 		String choice;
 
 		boolean right = false;
@@ -132,8 +138,7 @@ public class Library {
 			}
 
 			else if (choice.equals("4")) {
-				System.out.println("Which item (enter the title)? ");
-				String r = in.next();
+				String r = returnItem();
 				markItemReturned(r);
 
 			}
